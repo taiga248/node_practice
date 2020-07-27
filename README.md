@@ -1,2 +1,1 @@
-# node_practice
-Node.jsのお勉強
+# A study repository for Node.js
