@@ -2,13 +2,12 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Blog = require("./models/blogs");
+const dbURI = require("./dbURI");
 
 const app = express();
 const port = 3000;
 
 // Connect to MongoDB
-const dbURI =
-  "mongodb+srv://energytaiga:energytaiga@energy.kihhb.gcp.mongodb.net/node_practice?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, userUnifieldTopology: true })
   .then(() => app.listen(port))
@@ -25,7 +24,7 @@ app.use(morgan("dev"));
 app.get("/add-blog", (req, res) => {
   // MongoDBに保存されるやつ
   const blog = new Blog({
-    title: "new blog 2",
+    title: "new blog 3",
     snippet: "about my new blog",
     body: "more about new blog"
   });
