@@ -37,7 +37,7 @@ a:active {
   transform: scale(0.99);
 }
 
-/* index */
+/* blogs */
 .blogs {
   width: 75vw;
   margin: 0 auto;
@@ -46,7 +46,15 @@ a:active {
   font-weight: 200;
 }
 .blogs__item {
+  border-radius: 16px;
+  border: solid 1px #efefef;
+  margin: 16px 24px;
   padding: 0 0 0 24px;
+}
+.blogs__item:hover {
+  transition: 0.1s;
+  transform: scale(0.99);
+  opacity: 0.9;
 }
 
 /* about */
@@ -79,11 +87,11 @@ label {
   border: none;
   background: #444;
   color: #fff;
-  transition: 0.2s;
   cursor: pointer;
 }
-.btn:hover {
-  transform: scale(1.05);
+.create__btn:hover {
+  transition: 0.2s;
+  transform: scale(.95);
 }
 
 /* 404 */
