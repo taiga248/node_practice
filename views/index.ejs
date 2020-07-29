@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./components/head.ejs") %>
+  <body>
+    <%- include("./components/nav.ejs") %>
+    <section class="blogs">
+      <h2 class="blogs__title">All Blogs</h2>
+      <% if (blogs.length > 0){ %> <% blogs.forEach(blog => { %>
+      <div class="blogs__item">
+        <h3><%= blog.title %></h3>
+        <p><%= blog.snippet %></p>
+      </div>
+      <% }) %> <% }else{ %>
+      <h3>No data...</h3>
+      <% } %>
+    </section>
+    <%- include("./components/footer.ejs") %>
+  </body>
+</html>
