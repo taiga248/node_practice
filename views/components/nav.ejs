@@ -1,0 +1,47 @@
+<nav class="head">
+  <ul class="link">
+    <li class="link__item link__item--title">
+      <h1>
+        <a href="/">TG Blog</a>
+      </h1>
+    </li>
+    <li class="link__item"><a href="/">Home</a></li>
+    <li class="link__item"><a href="/about">About</a></li>
+    <li class="link__item"><a href="/blogs/create">New Blog</a></li>
+  </ul>
+</nav>
+<style>
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: #000;
+    text-decoration: none;
+  }
+  head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .link__item {
+    border-radius: 16px;
+    padding: 8px 16px;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .link__item:hover {
+    background: #efefef;
+    transform: scale(0.95);
+  }
+  .link__item--title:hover {
+    background: #fff;
+    transform: scale(0.99);
+  }
+</style>

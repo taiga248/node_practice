@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./components/head.ejs") %>
+  <body>
+    <%- include("./components/nav.ejs") %>
+
+    <section>
+      <form>
+        <label for="title">Blog title : </label>
+        <input type="text" id="title" required /><br /><br />
+        <label for="snipet">Blog snipet : </label>
+        <input type="text" id="snipet" required /><br /><br />
+        <label for="body">Blog body : </label>
+        <textarea id="body"></textarea><br />
+        <br />
+        <button class="btn">Submit</button>
+      </form>
+    </section>
+    <style>
+      form {
+        width: 500px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        border-radius: 16px;
+        border: solid 1px #efefef;
+      }
+      label {
+        font-size: 1.2em;
+      }
+      .btn {
+        margin: 0 auto;
+        border-radius: 8px;
+        padding: 8px 16px;
+        border: none;
+        background: #444;
+        color: #fff;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+    <%- include("./components/footer.ejs") %>
+  </body>
+</html>
