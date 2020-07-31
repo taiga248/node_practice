@@ -9,7 +9,7 @@ const port = 3000;
 
 // Connect to MongoDB
 mongoose
-  .connect(dbURI, { useNewUrlParser: true })
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port))
   .catch(err => console.log(err));
 
