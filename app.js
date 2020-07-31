@@ -9,7 +9,7 @@ const port = 3000;
 
 // Connect to MongoDB
 mongoose
-  .connect(dbURI, { useNewUrlParser: true, userUnifieldTopology: true })
+  .connect(dbURI, { useNewUrlParser: true })
   .then(() => app.listen(port))
   .catch(err => console.log(err));
 
@@ -18,42 +18,8 @@ app.set("view engine", "ejs");
 
 // ミドルウェア と　静的ファイル
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
-// MongoDB, サンドボックス
-app.get("/add-blog", (req, res) => {
-  // MongoDBに保存されるやつ
-  const blog = new Blog({
-    title: "new blog 3",
-    snippet: "about my new blog",
-    body: "more about new blog"
-  });
-  blog
-    .save()
-    .then(result => {
-      res.send(result);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
-
-// Find doc
-app.get("/all-blogs", (req, res) => {
-  Blog.find()
-    .then(result => {
-      res.send(result);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
-
-app.get("/single-blog", (req, res) => {
-  Blog.findById("5f21b234d0f377640eae6654")
-    .then(result => res.send(result))
-    .catch(err => console.log(err));
-});
 
 // ルーティング
 app.get("/", (req, res) => {
@@ -75,8 +41,41 @@ app.get("/blogs", (req, res) => {
     });
 });
 
+app.post("/blogs", (req, res) => {
+  const blog = new Blog(req.body);
+  blog
+    .save()
+    .then(result => {
+      res.redirect("/blogs");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+// 詳細表示、削除の実装より下にに書いちゃだめ 遷移しなくなる
 app.get("/blogs/create", (req, res) => {
   res.render("create", { title: "Create a new blog" });
+});
+
+app.get("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id)
+    .then(result => {
+      res.render("details", { blog: result, title: "Blog details" });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id)
+    .then(result => {
+      res.json({ redirect: "/blogs" });
+    })
+    .catch(err => console.log(err));
 });
 
 app.use((req, res) => {
