@@ -91,7 +91,37 @@ label {
 }
 .create__btn:hover {
   transition: 0.2s;
-  transform: scale(.95);
+  transform: scale(0.95);
+}
+
+/* details */
+.details {
+  width: 75vw;
+  margin: 0 auto;
+}
+.details__content {
+  border-radius: 16px;
+  border: solid 1px #efefef;
+  margin: 8px;
+  padding: 24px;
+}
+.details__content__body {
+  padding: 0 0 0 24px;
+}
+.details__content__delete {
+  color: #444;
+  background: #fff;
+  margin: 0 auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.details__content__delete:hover {
+  color: #fff;
+  background: #444;
+  transition: 0.2s;
+  transform: scale(0.95);
 }
 
 /* 404 */
