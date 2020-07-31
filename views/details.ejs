@@ -17,7 +17,7 @@
     <%- include("./components/footer.ejs") %>
     <script>
       const delete_btn = document.querySelector("a.details__content__delete");
-      delete_btn.addEventListener("click", e => {
+      delete_btn.addEventListener("click", () => {
         const endpoint = `/blogs/${delete_btn.dataset.doc}`;
         fetch(endpoint, {
           method: "DELETE"
