@@ -73,14 +73,34 @@ a:active {
 .create {
   width: 500px;
   margin: 0 auto;
-  padding: 16px 24px;
-  border-radius: 16px;
   border: solid 1px #efefef;
+}
+.create__form {
+  width: 450px;
+  font-size: 1.1em;
+  padding: 24px 32px;
+  border-radius: 16px;
+}
+.create__form__input {
+  font-size: 1.2em;
+  width: 200px;
+  height: 30px;
+  margin: 0 0 0 24px;
+  padding: 0 8px;
+}
+.create__form__input--textarea {
+  font-size: 1.2em;
+  width: 400px;
+  height: 100px;
+  margin: 0 0 0 24px;
+  padding: 2px 8px;
 }
 label {
   font-size: 1.2em;
 }
-.create__btn {
+.create__form__btn {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   border-radius: 8px;
   padding: 8px 16px;
@@ -89,7 +109,7 @@ label {
   color: #fff;
   cursor: pointer;
 }
-.create__btn:hover {
+.create__form__btn:hover {
   transition: 0.2s;
   transform: scale(0.95);
 }
