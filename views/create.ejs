@@ -1,38 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%- include("./components/head.ejs") %>
-  <body>
-    <%- include("./components/nav.ejs") %>
-    <section class="create">
-      <form class="create__form" action="/blogs" method="POST">
-        <label for="title">Blog title : </label><br />
-        <input
-          class="create__form__input"
-          type="text"
-          id="title"
-          name="title"
-          required
-        /><br /><br />
-        <label for="snipet">Blog snipet : </label><br />
-        <input
-          class="create__form__input"
-          type="text"
-          id="snipet"
-          name="snippet"
-          required
-        /><br /><br />
-        <label for="body">Blog body : </label><br />
-        <textarea
-          class="create__form__input--textarea"
-          id="body"
-          name="body"
-          required
-        ></textarea
-        ><br />
-        <br />
-        <button class="create__form__btn">Submit</button>
-      </form>
-    </section>
-    <%- include("./components/footer.ejs") %>
-  </body>
-</html>
+<%- include("./components/head.ejs") %>
+<%- include("./components/nav.ejs") %>
+
+<section class="create">
+  <form class="create__form" action="/blogs" method="POST">
+    <label for="title">Blog title : </label><br />
+    <input
+      class="create__form__input"
+      type="text"
+      id="title"
+      name="title"
+      required
+    /><br /><br />
+    <label for="snipet">Blog snipet : </label><br />
+    <input
+      class="create__form__input"
+      type="text"
+      id="snipet"
+      name="snippet"
+      required
+    /><br /><br />
+    <label for="body">Blog body : </label><br />
+    <textarea
+      class="create__form__input--textarea"
+      id="body"
+      name="body"
+      required
+    ></textarea
+    ><br />
+    <br />
+    <button class="create__form__btn">Submit</button>
+  </form>
+</section>
+
+<%- include("./components/footer.ejs") %>
